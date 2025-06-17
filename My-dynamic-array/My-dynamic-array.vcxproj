@@ -123,7 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="clsDynamicArray.cpp" />
     <ClCompile Include="My-dynamic-array.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clsDynamicArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
