@@ -35,7 +35,7 @@ public:
     bool SetItem(int index, T Value)
     {
 
-        if (index >= _Size || _Size < 0)
+        if (index >= _Size)
         {
             return false;
         }
@@ -70,19 +70,16 @@ public:
 
     }
 
+
     void Resize(int NewSize)
     {
-
-        if (NewSize < 0)
-        {
-            NewSize = 0;
-        };
-
         _TempArray = new T[NewSize];
 
+        //limit the original size to the new size if it is less.
         if (NewSize < _Size)
             _Size = NewSize;
 
+        //copy all data from original array until the size
         for (int i = 0; i < _Size; i++)
         {
             _TempArray[i] = OriginalArray[i];
@@ -95,32 +92,69 @@ public:
 
     }
 
-    T GetItem(int Index)
+    void  Reverse()
     {
-        return OriginalArray[Index];
-    }
 
-    void Reverse()
-    {
         _TempArray = new T[_Size];
+
         int counter = 0;
+
         for (int i = _Size - 1; i >= 0; i--)
         {
             _TempArray[counter] = OriginalArray[i];
             counter++;
         }
 
-        delete[]OriginalArray;
+        delete[] OriginalArray;
         OriginalArray = _TempArray;
+
     }
 
     void Clear()
     {
         _Size = 0;
         _TempArray = new T[0];
-        delete[]OriginalArray;
+        delete[] OriginalArray;
         OriginalArray = _TempArray;
     }
+
+    T GetItem(int index)
+    {
+        return OriginalArray[index];
+
+    }
+
+
+    bool DeleteItemAt(int index)
+    {
+
+        if (index >= _Size || index < 0)
+        {
+            return false;
+        }
+
+        _Size--;
+
+        _TempArray = new T[_Size];
+
+        //copy all before index
+        for (int i = 0; i < index; i++)
+        {
+            _TempArray[i] = OriginalArray[i];
+        }
+
+        //copy all after index
+        for (int i = index + 1; i < _Size + 1; i++)
+        {
+            _TempArray[i - 1] = OriginalArray[i];
+        }
+
+        delete[] OriginalArray;
+        OriginalArray = _TempArray;
+        return true;
+
+    }
+
 
 };
 
