@@ -36,9 +36,19 @@ int main()
     //cout << "\nArray Items after clear: \n";
     //MyDynamicArray.PrintList();
 
-    MyDynamicArray.DeleteItem(2);
-    cout << "\nArray Items after delete Item(2): \n";
+    //MyDynamicArray.DeleteItemAt(2);
+    //cout << "\nArray Items after delete Item(2): \n";
+    //MyDynamicArray.PrintList();
+
+    MyDynamicArray.DeleteFirstItem();
+    cout << "\nArray Items after delete first Item: \n";
     MyDynamicArray.PrintList();
+
+    MyDynamicArray.DeleteLastItem();
+    cout << "\nArray Items after delete last Item: \n";
+    MyDynamicArray.PrintList();
+
+
 
     system("pause>0");
 
