@@ -23,50 +23,28 @@ int main()
 
     MyDynamicArray.PrintList();
 
-    cout << "\nItem(2): " << MyDynamicArray.GetItem(2) << "\n";
-
-
-    MyDynamicArray.Reverse();
-
-    cout << "\nArray Items after reverse: \n";
+    MyDynamicArray.InsertAtBeginning(400);
+    cout << "\n\nArray after insert 400 at Begining:";
+    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
     MyDynamicArray.PrintList();
 
-    //MyDynamicArray.Clear();
+    MyDynamicArray.InsertBefore(2, 500);
+    cout << "\n\nArray after insert 500 before index 2:";
+    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
+    MyDynamicArray.PrintList();
 
-    //cout << "\nArray Items after clear: \n";
-    //MyDynamicArray.PrintList();
-
-    //MyDynamicArray.DeleteItemAt(2);
-    //cout << "\nArray Items after delete Item(2): \n";
-    //MyDynamicArray.PrintList();
-
-    //MyDynamicArray.DeleteFirstItem();
-    //cout << "\nArray Items after delete first Item: \n";
-    //MyDynamicArray.PrintList();
-
-    //MyDynamicArray.DeleteLastItem();
-    //cout << "\nArray Items after delete last Item: \n";
-    //MyDynamicArray.PrintList();
-
-    //int Index = MyDynamicArray.Find(30);
-    //if (Index == -1)
-    //    cout << "\nItem was not Found";
-    //else
-    //    cout << "\n30 is found at index : " << Index;
-
-    //MyDynamicArray.DeleteItem(30);
-    //cout << "\nArray Items after delete Item 30 : \n";
-    //MyDynamicArray.PrintList();
-
-    MyDynamicArray.InsertAt(3, 100);
-    cout << "\nArray Items after insert 100 at index 3: \n";
+    MyDynamicArray.InsertAfter(2, 600);
+    cout << "\n\nArray after insert 600 after index 2:";
+    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
     MyDynamicArray.PrintList();
 
 
-
+    MyDynamicArray.InsertAtEnd(800);
+    cout << "\n\nArray after insert 800 at End:";
+    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
+    MyDynamicArray.PrintList();
 
 
     system("pause>0");
-
 
 }
