@@ -40,13 +40,29 @@ int main()
     //cout << "\nArray Items after delete Item(2): \n";
     //MyDynamicArray.PrintList();
 
-    MyDynamicArray.DeleteFirstItem();
-    cout << "\nArray Items after delete first Item: \n";
+    //MyDynamicArray.DeleteFirstItem();
+    //cout << "\nArray Items after delete first Item: \n";
+    //MyDynamicArray.PrintList();
+
+    //MyDynamicArray.DeleteLastItem();
+    //cout << "\nArray Items after delete last Item: \n";
+    //MyDynamicArray.PrintList();
+
+    //int Index = MyDynamicArray.Find(30);
+    //if (Index == -1)
+    //    cout << "\nItem was not Found";
+    //else
+    //    cout << "\n30 is found at index : " << Index;
+
+    //MyDynamicArray.DeleteItem(30);
+    //cout << "\nArray Items after delete Item 30 : \n";
+    //MyDynamicArray.PrintList();
+
+    MyDynamicArray.InsertAt(3, 100);
+    cout << "\nArray Items after insert 100 at index 3: \n";
     MyDynamicArray.PrintList();
 
-    MyDynamicArray.DeleteLastItem();
-    cout << "\nArray Items after delete last Item: \n";
-    MyDynamicArray.PrintList();
+
 
 
 

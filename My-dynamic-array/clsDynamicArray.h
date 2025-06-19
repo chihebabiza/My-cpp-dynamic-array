@@ -165,5 +165,54 @@ public:
         return DeleteItemAt(_Size - 1);
     }
 
+    int Find(T Value)
+    {
+        for (int i = 0; i < _Size; i++)
+        {
+            if (OriginalArray[i] == Value)
+                return i;
+        }
+                return -1;
+    }
+
+    bool DeleteItem(T Value)
+    {
+        int Index = Find(Value);
+        if (Index != -1)
+        {
+            DeleteItemAt(Index);
+            return true;
+        }
+        return false;
+    }
+    
+    bool InsertAt(int Index, T Value)
+    {
+        if (Index < 0 || Index > _Size)
+            return false;
+
+        _TempArray = new T[_Size + 1];
+
+        for (int i = 0; i < Index; i++)
+        {
+            _TempArray[i] = OriginalArray[i];
+        }
+
+        _TempArray[Index] = Value;
+
+        for (int i = Index; i < _Size; i++)
+        {
+            _TempArray[i + 1] = OriginalArray[i];
+        }
+
+        delete[] OriginalArray;
+        OriginalArray = _TempArray;
+        _Size++; 
+
+        return true;
+    }
+
+
+
 };
 
